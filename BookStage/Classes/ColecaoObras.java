@@ -1,3 +1,5 @@
+package Classes;
+
 
 public class ColecaoObras implements Colecao {
 
