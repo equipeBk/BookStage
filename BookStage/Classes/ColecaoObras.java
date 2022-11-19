@@ -39,22 +39,30 @@ public class ColecaoObras implements Colecao {
 		System.out.printf("-------------Buscar por editora = 3---------------------------\n");
 		System.out.printf("---------------Buscar por autor = 4---------------------------\n");
 		System.out.printf("----------------Buscar por ISBN = 5---------------------------\n");
-		System.out.printf("------Imprimir dados principais = 6---------------------------\n");
-		System.out.printf("-------imprimir todods os dados = 7---------------------------\n");
-		System.out.printf("--imprimir o livro mais vendido = 8---------------------------\n");
-		System.out.printf("---------------------------Sair = 9---------------------------\n");
+		System.out.printf("------Buscar por faixa de preço = 6---------------------------\n");
+		System.out.printf("------Imprimir dados principais = 7---------------------------\n");
+		System.out.printf("--------imprimir todos os dados = 8---------------------------\n");
+		System.out.printf("--imprimir o livro mais vendido = 9---------------------------\n");
+		System.out.printf("--------------------------Sair = 10---------------------------\n");
 	}
 
 
 	@Override
 	public void PesquisarPorDados(String pesq) {
-		// TODO Auto-generated method stub
+			if(this.dados[this.posicaoCorrente].getNome().equals(pesq)) {
+			System.out.println(dados[this.posicaoCorrente]);
+		}else{
+			System.out.println("Não há obras com esse nome em nosso estoque.");
+		}
+		//PODEMOS CRIAR UM METODO PRA CADA PESQUISA OU INSERIR TODOS AQUI
 
 	}
 
 	@Override
-	public void PesquisarPreco(int precoInicial, int precoFinal) {
-		// TODO Auto-generated method stub
+	public void PesquisarPreco(double precoInicial, double precoFinal) {
+		if(this.dados[this.posicaoCorrente].getValor() <= precoFinal && this.dados[this.posicaoCorrente].getValor() >= precoInicial) {
+			System.out.println(dados[this.posicaoCorrente]);
+		}
 
 	}
 

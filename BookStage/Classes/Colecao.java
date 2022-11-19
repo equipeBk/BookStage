@@ -5,7 +5,7 @@ public interface Colecao {
 
 	void PesquisarPorDados(String pesq);
 
-	void PesquisarPreco(int precoInicial, int precoFinal);
+	void PesquisarPreco(double precoInicial, double precoFinal);
 
 	void ImprimeEstoque();
 

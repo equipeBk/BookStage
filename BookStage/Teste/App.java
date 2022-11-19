@@ -22,9 +22,9 @@ public class App {
 		do {
 
 			CO.menu();
-			opMenu = scan.nextInt();
+			int opMen = scan.nextInt();
 
-			switch (opMenu) {
+			switch (opMen) {
 
 			// METODO INSERIR
 
@@ -74,7 +74,6 @@ public class App {
 
 					System.out.println("Digite a referencia: ");
 					referencia = scan.nextLine();
-
 					CO.inserirObra(OEd);
 					
 					i++;
@@ -85,7 +84,7 @@ public class App {
 					
 					scan.nextLine();
 					
-					System.out.printf("Digite o nome da obra educacional[%d]: ", i);
+					System.out.printf("Digite o nome da Historia em quadrinho[%d]: ", i);
 					nome = scan.nextLine();
 					OHq.setNome(nome);
 
@@ -122,15 +121,54 @@ public class App {
 
 					System.out.println("Digite o ilustrador: ");
 					ilustrador = scan.nextLine();
-
+					
 					CO.inserirObra(OHq);
 					i++;
 
-				}
-
+				}break;
+				
+			///METODO PESQUISAR POR NOME
+			case 2:
+				scan.nextLine();
+				System.out.print("digite o nome da obra que deseja pesquisar:");
+				String pesq = scan.nextLine();
+				CO.PesquisarPorDados(pesq);
+				break;
+			
+			//BUSCAR POR EDITORA
+			case 3:
+				break;
+			
+			//BUSCAR POR AUTOR
+			case 4:
+				break;
+			
+			// BUSCAR POR ISBN
+			case 5:
+				break;
+				
+			// BUSCAR POR FAIXA DE PREÇO
+			case 6:
+				System.out.print("Digite o valor incial do exemplar:");
+				double precoInicial = scan.nextDouble();
+				System.out.print("Digite o valor final do exemplar:");
+				double precoFinal = scan.nextDouble();
+				CO.PesquisarPreco(precoInicial, precoFinal);
+				break;
+				
+			//IMPRIMIR DADOS PRINCIPAIS
+			case 7: 
+				break;
+				
+			//IMPRIMIR TODOS OS DADOS
+			case 8:
+				break;
+				
+			//IMPRIMIR LIVRO MAIS VENDIDO
+			case 9:
+				break;
 			}
-
-		} while (opMenu != 9);
-
+		} while (opMenu != 10);
+		
 	}
 }
