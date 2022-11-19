@@ -2,8 +2,10 @@ package Classes;
 
 
 public class ColecaoObras implements Colecao {
-
-	private Obra dados[];
+	
+	int n = 100;
+	
+	private Obra dados[] = new Obra[n];
 	private int posicaoCorrente;
 	
 
@@ -63,8 +65,11 @@ public class ColecaoObras implements Colecao {
 	}
 
 	@Override
-	public void inserirObra() {
-		// TODO Auto-generated method stub
+	public Boolean inserirObra(Obra o) {
+		
+		this.dados[posicaoCorrente] = o;
+		
+		return true;
 
 	}
 

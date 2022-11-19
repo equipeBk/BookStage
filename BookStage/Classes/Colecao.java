@@ -9,7 +9,7 @@ public interface Colecao {
 
 	void ImprimeEstoque();
 
-	void inserirObra();
+	Boolean inserirObra(Obra o);
 
 	void imprimeDadosPrincipais();
 

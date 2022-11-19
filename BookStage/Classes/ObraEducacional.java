@@ -3,9 +3,7 @@ package Classes;
 
 public class ObraEducacional extends Obra {
 
-	private String referencias;
-	
-	
+	private String referencias;	
 	
 	
 	public String getReferencias() {
