@@ -16,15 +16,13 @@ public abstract class Obra {
 
 	// GETS E SETS
 
-
-
-	@Override
+	
 	public String toString() {
 		return "Obra [nome=" + nome + ", editora=" + editora + ", ISBM=" + ISBM + ", idioma=" + idioma + ", Autor="
 				+ Autor + ", AnoPublicacao=" + AnoPublicacao + ", valor=" + valor + ", qtdCorrenteEstoque="
 				+ qtdCorrenteEstoque + ", qtdEstoque=" + qtdEstoque + "]";
 	}
-	
+
 	public String getNome() {
 		return nome;
 	}
@@ -98,11 +96,9 @@ public abstract class Obra {
 	}
 
 	boolean ValidarISBM() {
-		
+
 		return true;
-		
+
 	}
-	
-	
 
 }

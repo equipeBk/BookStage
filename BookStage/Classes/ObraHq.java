@@ -14,10 +14,10 @@ public class ObraHq extends Obra {
 	}
 
 	public String toString() {
-		return "Obra \nNome: " + this.getNome() + "\nEditora: " + this.getEditora() + "\nISBM: " + this.getISBM()
-				+ "\nidioma: " + this.getIdioma() + "\nAutor: " + this.getAutor() + "\nAnoPublicacao: "
-				+ this.getAnoPublicacao() + "\nvalor: " + this.getValor() + "\nQuantidade corrente em estoque: "
-				+ this.getQtdCorrenteEstoque() + "\nQuantidade em Estoque: " + this.getQtdEstoque() + "\nIustrador: "
+		return "Obra [nome=" + this.getNome() + ", editora=" + this.getEditora() + ", ISBM=" + this.getISBM()
+				+ ", idioma=" + this.getIdioma() + ", Autor=" + this.getAutor() + ", AnoPublicacao="
+				+ this.getAnoPublicacao() + ", valor=" + this.getValor() + ", qtdCorrenteEstoque="
+				+ this.getQtdCorrenteEstoque() + ", qtdEstoque=" + this.getQtdEstoque() + "Iustrador: "
 				+ this.ilustrador;
 
 	}

@@ -1,13 +1,11 @@
 package Classes;
 
-
 public class ColecaoObras implements Colecao {
-	
+
 	int n = 100;
-	
+
 	private Obra dados[] = new Obra[n];
 	private int posicaoCorrente;
-	
 
 	// GETS E SETS
 
@@ -28,9 +26,9 @@ public class ColecaoObras implements Colecao {
 	}
 
 	// METODOS
-	
-	//METODO MENU TEMPORARIO, ATÉ CRIARMOS A INTERFACE
-	
+
+	// METODO MENU TEMPORARIO, ATÉ CRIARMOS A INTERFACE
+
 	public void menu() {
 
 		System.out.printf("\n\n--------------------------MENU----------------------------\n");
@@ -45,57 +43,67 @@ public class ColecaoObras implements Colecao {
 		System.out.printf("--imprimir o livro mais vendido = 9---------------------------\n");
 		System.out.printf("--------------------------Sair = 10---------------------------\n");
 	}
-
-
-	@Override
+	
+	
 	public void PesquisarPorDados(String pesq) {
-			if(this.dados[this.posicaoCorrente].getNome().equals(pesq)) {
+
+		if (this.dados[this.posicaoCorrente].getNome().equals(pesq)
+				|| this.dados[this.posicaoCorrente].getAutor().equals(pesq)
+				|| this.dados[this.posicaoCorrente].getEditora().equals(pesq)
+				|| this.dados[this.posicaoCorrente].getISBM().equals(pesq)) {
+
 			System.out.println(dados[this.posicaoCorrente]);
-		}else{
+
+		} else {
+
 			System.out.println("Não há obras com esse nome em nosso estoque.");
+
 		}
-		//PODEMOS CRIAR UM METODO PRA CADA PESQUISA OU INSERIR TODOS AQUI
+
+		// Adicionei "||" para não ser necessário criar outros metodos
 
 	}
 
-	@Override
 	public void PesquisarPreco(double precoInicial, double precoFinal) {
-		if(this.dados[this.posicaoCorrente].getValor() <= precoFinal && this.dados[this.posicaoCorrente].getValor() >= precoInicial) {
-			System.out.println(dados[this.posicaoCorrente]);
+
+		if (this.dados[this.posicaoCorrente].getValor() <= precoFinal
+				&& this.dados[this.posicaoCorrente].getValor() >= precoInicial) {
+
+			System.out.println(this.dados[this.posicaoCorrente]);
 		}
 
 	}
 
-	@Override
 	public void ImprimeEstoque() {
 		// TODO Auto-generated method stub
 
 	}
 
-	@Override
 	public Boolean inserirObra(Obra o) {
-		
+
 		this.dados[posicaoCorrente] = o;
-		
+
 		return true;
 
 	}
 
-	@Override
 	public void imprimeDadosPrincipais() {
 		// TODO Auto-generated method stub
 
 	}
 
-	@Override
 	public void imprimeTodosDados() {
-		// TODO Auto-generated method stub
+
+		for (int i = 0; i < dados.length; i++) {
+
+			System.out.println(dados[i]);
+
+		}
 
 	}
 
 	@Override
 	public void imprimeLivroMaisVendido() {
-		// TODO Auto-generated method stub
 
 	}
 

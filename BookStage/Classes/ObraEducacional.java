@@ -17,13 +17,10 @@ public class ObraEducacional extends Obra {
 
 
 	public String toString() {
-		return "Obra \nNome: " + this.getNome() + "\nEditora: " + this.getEditora() + "\nISBM: " + this.getISBM()
-				+ "\nidioma: " + this.getIdioma() + "\nAutor: " + this.getAutor() + "\nAnoPublicacao: "
-				+ this.getAnoPublicacao() + "\nvalor: " + this.getValor() + "\nqtdCorrenteEstoque: "
-				+ this.getQtdCorrenteEstoque() + "\nqtdEstoque: " + this.getQtdEstoque() + "\nReferência: "
-				+ this.referencias;
-
+		return "ObraLiteraria []";
 	}
+	
+	
 	
 
 }
