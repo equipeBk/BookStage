@@ -2,7 +2,7 @@ package Classes;
 
 public class ColecaoObras implements Colecao {
 
-	int n = 100;
+	int n = 100, i, ind;
 
 	private Obra dados[] = new Obra[n];
 	private int posicaoCorrente;
@@ -43,8 +43,7 @@ public class ColecaoObras implements Colecao {
 		System.out.printf("--imprimir o livro mais vendido = 9---------------------------\n");
 		System.out.printf("--------------------------Sair = 10---------------------------\n");
 	}
-	
-	
+
 	public void PesquisarPorDados(String pesq) {
 
 		if (this.dados[this.posicaoCorrente].getNome().equals(pesq)
@@ -59,8 +58,6 @@ public class ColecaoObras implements Colecao {
 			System.out.println("Não há obras com esse nome em nosso estoque.");
 
 		}
-
-		// Adicionei "||" para não ser necessário criar outros metodos
 
 	}
 
@@ -94,7 +91,7 @@ public class ColecaoObras implements Colecao {
 
 	public void imprimeTodosDados() {
 
-		for (int i = 0; i < dados.length; i++) {
+		for (i = 0; i < dados.length; i++) {
 
 			System.out.println(dados[i]);
 
@@ -102,8 +99,20 @@ public class ColecaoObras implements Colecao {
 
 	}
 
-	@Override
 	public void imprimeLivroMaisVendido() {
+
+		int maisVendido = dados[0].getQtdCorrenteEstoque();
+
+		for (i = 0; i < n; i++) {
+
+			if (dados[i].getQtdCorrenteEstoque() < maisVendido) {
+
+				ind = i;
+
+			}
+		}
+		
+		System.out.println("O livro mais vendido foi: " + dados[ind].getQtdCorrenteEstoque());
 
 	}
 

@@ -4,12 +4,12 @@ import Classes.*;
 import java.util.*;
 
 public class App {
-	/// mudando pra fazer a pull
+
 	public static void main(String[] args) {
 
-		String nome, editora, isbm, idioma, autor, referencia, ilustrador, pesq;
+		String nome, editora, isbm, autor, referencia, ilustrador, pesq, categoria;
 		Double valor;
-		int qtdE, qtdCorE, opMenu = 0, dd, mm, yyyy, i = 0;
+		int qtdE, opMenu = 0, dd, mm, yyyy, i = 0;
 
 		// INSTANCIANDO CLASSES
 
@@ -19,6 +19,7 @@ public class App {
 		ObraEducacional OEd = new ObraEducacional();
 		ObraHq OHq = new ObraHq();
 
+		
 		do {
 
 			CO.menu();
@@ -44,7 +45,8 @@ public class App {
 					System.out.println("Digite a editora: ");
 					editora = scan.nextLine();
 					OEd.setEditora(editora);
-
+					
+					
 					System.out.println("Digite a ISBM: ");
 					isbm = scan.nextLine();
 					OEd.setISBM(isbm);
@@ -52,6 +54,10 @@ public class App {
 					System.out.println("Digite a autor: ");
 					autor = scan.nextLine();
 					OEd.setAutor(autor);
+				
+					System.out.println("Digite a categoria do livro: ");
+					categoria = scan.nextLine();
+					OEd.setCategoria(categoria);
 
 					System.out.println("Agora a data de nascimento separada por espacos (ex: dd mm yyyy): ");
 					dd = scan.nextInt();
@@ -99,6 +105,10 @@ public class App {
 					System.out.println("Digite a autor: ");
 					autor = scan.nextLine();
 					OHq.setAutor(autor);
+					
+					System.out.println("Digite a categoria do livro: ");
+					categoria = scan.nextLine();
+					OHq.setCategoria(categoria);
 
 					System.out.println("Agora a data de nascimento separada por espacos (ex: dd mm yyyy): ");
 					dd = scan.nextInt();
@@ -193,6 +203,9 @@ public class App {
 			// IMPRIMIR LIVRO MAIS VENDIDO
 				
 			case 9:
+				
+				CO.imprimeLivroMaisVendido();
+				
 				break;
 			}
 		} while (opMenu != 10);

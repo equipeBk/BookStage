@@ -8,6 +8,7 @@ public abstract class Obra {
 	private String editora;
 	private String ISBM;
 	private String idioma;
+	private String categoria;
 	private String Autor;
 	private Calendar AnoPublicacao;
 	private Double valor;
@@ -16,11 +17,12 @@ public abstract class Obra {
 
 	// GETS E SETS
 
-	
 	public String toString() {
-		return "Obra [nome=" + nome + ", editora=" + editora + ", ISBM=" + ISBM + ", idioma=" + idioma + ", Autor="
-				+ Autor + ", AnoPublicacao=" + AnoPublicacao + ", valor=" + valor + ", qtdCorrenteEstoque="
-				+ qtdCorrenteEstoque + ", qtdEstoque=" + qtdEstoque + "]";
+
+		return "Obra \nnome=" + nome + "\neditora=" + editora + "\nISBM=" + ISBM + "\nidioma=" + idioma + "\nAutor="
+				+ Autor + "\nAnoPublicacao=" + AnoPublicacao + "\nvalor=" + valor + "\nqtdCorrenteEstoque="
+				+ qtdCorrenteEstoque + "\nqtdEstoque=" + qtdEstoque + "]";
+
 	}
 
 	public String getNome() {
@@ -94,8 +96,18 @@ public abstract class Obra {
 	public void setQtdEstoque(int qtdEstoque) {
 		this.qtdEstoque = qtdEstoque;
 	}
+	
+	
 
-	boolean ValidarISBM() {
+	public String getCategoria() {
+		return categoria;
+	}
+
+	public void setCategoria(String categoria) {
+		this.categoria = categoria;
+	}
+
+	boolean ValidarISBM(String isbm) {
 
 		return true;
 
