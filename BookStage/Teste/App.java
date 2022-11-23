@@ -24,6 +24,13 @@ public class App {
 
 			CO.menu();
 			int opMen = scan.nextInt();
+			if(CO.estoqueVazio() == true && opMen != 10) {
+				System.out.println("Não há nenhum livro inserido.");
+				System.out.printf("\n--------------------------MENU-------------------------------\n");
+				System.out.printf("------------------------Inserir = 1---------------------------\n");
+				System.out.printf("--------------------------Sair = 10---------------------------\n");
+				opMen = scan.nextInt();
+			}
 
 			switch (opMen) {
 
@@ -187,28 +194,28 @@ public class App {
 				CO.PesquisarPreco(precoInicial, precoFinal);
 				break;
 
-			// IMPRIMIR DADOS PRINCIPAIS
 				
+			// IMPRIMIR DADOS PRINCIPAIS	
 			case 7:
+				CO.imprimeDadosPrincipais();
+				
 				break;
 
-			// IMPRIMIR TODOS OS DADOS
-				
+			// IMPRIMIR TODOS OS DADOS	
 			case 8:
 				
 				CO.imprimeTodosDados();
 				
 				break;
 
-			// IMPRIMIR LIVRO MAIS VENDIDO
-				
+			// IMPRIMIR LIVRO MAIS VENDIDO	
 			case 9:
 				
 				CO.imprimeLivroMaisVendido();
 				
 				break;
 			}
-		} while (opMenu != 10);
+		} while (opMenu == 10);
 
 	}
 }

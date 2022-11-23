@@ -43,7 +43,16 @@ public class ColecaoObras implements Colecao {
 		System.out.printf("--imprimir o livro mais vendido = 9---------------------------\n");
 		System.out.printf("--------------------------Sair = 10---------------------------\n");
 	}
-
+	
+	
+	public Boolean estoqueVazio() {
+		if(this.dados[this.posicaoCorrente] == null) {
+			return true;
+		}else {
+			return false;
+		}
+	}
+	
 	public void PesquisarPorDados(String pesq) {
 
 		if (this.dados[this.posicaoCorrente].getNome().equals(pesq)
@@ -85,7 +94,12 @@ public class ColecaoObras implements Colecao {
 	}
 
 	public void imprimeDadosPrincipais() {
-		// TODO Auto-generated method stub
+		for (i = 0; i < dados.length; i++) {
+			System.out.println(this.dados[i].getNome());
+			System.out.println(this.dados[i].getEditora());
+			System.out.println(this.dados[i].getValor());
+			System.out.println();
+		}
 
 	}
 
