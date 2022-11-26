@@ -20,8 +20,8 @@ public abstract class Obra {
 	public String toString() {
 
 		return "Obra \nnome=" + nome + "\neditora=" + editora + "\nISBM=" + ISBM + "\nidioma=" + idioma + "\nAutor="
-				+ Autor + "\nAnoPublicacao=" + AnoPublicacao + "\nvalor=" + valor + "\nqtdCorrenteEstoque="
-				+ qtdCorrenteEstoque + "\nqtdEstoque=" + qtdEstoque + "]";
+				+ Autor + "\nAnoPublicacao=" + AnoPublicacao.get(Calendar.YEAR) + "\nvalor=" + valor + "\nqtdCorrenteEstoque="
+				+ qtdCorrenteEstoque + "\nqtdEstoque=" + qtdEstoque;
 
 	}
 

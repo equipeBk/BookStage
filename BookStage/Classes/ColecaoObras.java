@@ -1,19 +1,21 @@
 package Classes;
 
+import java.util.ArrayList;
+
 public class ColecaoObras implements Colecao {
 
 	int n = 100, i, ind;
 
-	private Obra dados[] = new Obra[n];
+	ArrayList<Obra> dados = new ArrayList<>(100);
 	private int posicaoCorrente;
 
 	// GETS E SETS
 
-	public Obra[] getDados() {
+	public ArrayList<Obra> getDados() {
 		return dados;
 	}
 
-	public void setDados(Obra[] dados) {
+	public void setDados(ArrayList<Obra> dados) {
 		this.dados = dados;
 	}
 
@@ -43,90 +45,59 @@ public class ColecaoObras implements Colecao {
 		System.out.printf("--imprimir o livro mais vendido = 9---------------------------\n");
 		System.out.printf("--------------------------Sair = 10---------------------------\n");
 	}
-	
-	
-	public Boolean estoqueVazio() {
-		if(this.dados[this.posicaoCorrente] == null) {
-			return true;
-		}else {
-			return false;
-		}
-	}
-	
+
 	public void PesquisarPorDados(String pesq) {
 
-		if (this.dados[this.posicaoCorrente].getNome().equals(pesq)
-				|| this.dados[this.posicaoCorrente].getAutor().equals(pesq)
-				|| this.dados[this.posicaoCorrente].getEditora().equals(pesq)
-				|| this.dados[this.posicaoCorrente].getISBM().equals(pesq)) {
+		for (i = 0; i < dados.size(); i++) {
 
-			System.out.println(dados[this.posicaoCorrente]);
+			if (pesq.equals(dados.get(i).getNome()) || pesq.equals(dados.get(i).getEditora())
+					|| pesq.equals(dados.get(i).getAutor()) || pesq.equals(dados.get(i).getISBM())) {
 
-		} else {
+				ind = i;
+				System.out.println(dados.get(ind));
 
-			System.out.println("Não há obras com esse nome em nosso estoque.");
+			} else {
 
+				System.out
+						.println("O que voce pesquisou não foi encontrado em nossos dados, por favor tente novamente!");
+
+			}
 		}
 
 	}
 
 	public void PesquisarPreco(double precoInicial, double precoFinal) {
 
-		if (this.dados[this.posicaoCorrente].getValor() <= precoFinal
-				&& this.dados[this.posicaoCorrente].getValor() >= precoInicial) {
-
-			System.out.println(this.dados[this.posicaoCorrente]);
-		}
-
 	}
 
 	public void ImprimeEstoque() {
-		// TODO Auto-generated method stub
 
 	}
 
 	public Boolean inserirObra(Obra o) {
 
-		this.dados[posicaoCorrente] = o;
+		dados.add(o);
 
 		return true;
-
 	}
 
 	public void imprimeDadosPrincipais() {
-		for (i = 0; i < dados.length; i++) {
-			System.out.println(this.dados[i].getNome());
-			System.out.println(this.dados[i].getEditora());
-			System.out.println(this.dados[i].getValor());
-			System.out.println();
-		}
 
 	}
 
 	public void imprimeTodosDados() {
-
-		for (i = 0; i < dados.length; i++) {
-
-			System.out.println(dados[i]);
-
+		
+		for(i=0; i< dados.size(); i++) {
+			
+		System.out.println(dados.get(i));
+		
+		System.out.println();
+			
 		}
-
+		
 	}
 
 	public void imprimeLivroMaisVendido() {
-
-		int maisVendido = dados[0].getQtdCorrenteEstoque();
-
-		for (i = 0; i < n; i++) {
-
-			if (dados[i].getQtdCorrenteEstoque() < maisVendido) {
-
-				ind = i;
-
-			}
-		}
-		
-		System.out.println("O livro mais vendido foi: " + dados[ind].getQtdCorrenteEstoque());
 
 	}
 

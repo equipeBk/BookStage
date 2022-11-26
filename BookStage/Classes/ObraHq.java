@@ -1,5 +1,7 @@
 package Classes;
 
+import java.util.Calendar;
+
 public class ObraHq extends Obra {
 
 	private String ilustrador;
@@ -12,16 +14,14 @@ public class ObraHq extends Obra {
 		this.ilustrador = ilustrador;
 	}
 
-	
 	public String toString() {
-		
-		return "Obra [nome=" + this.getNome() + ", editora=" + this.getEditora() + ", ISBM=" + this.getISBM()
-		+ ", idioma=" + this.getIdioma() + ", Autor=" + this.getAutor() + ", AnoPublicacao="
-		+ this.getAnoPublicacao() + ", valor=" + this.getValor() + ", qtdCorrenteEstoque="
-		+ this.getQtdCorrenteEstoque() + ", qtdEstoque=" + this.getQtdEstoque() + "Ilustrador: "
-		+ this.ilustrador;
-	}
 
+		return "Nome: " + this.getNome() + "\nEditora: " + this.getEditora() + "\nISBM:" + this.getISBM() + "\nIdioma:"
+				+ this.getIdioma() + "\nAutor:" + this.getAutor() + "\nAnoPublicacao: "
+				+ this.getAnoPublicacao().get(Calendar.YEAR) + "\nValor: " + this.getValor()
+				+ "\nQuantidade Corrente de Estoque: " + this.getQtdCorrenteEstoque() + "\nQuantidade Estoque: "
+				+ this.getQtdEstoque() + "\nIlustrador: " + this.ilustrador;
+	}
 
 	boolean ValidarISBM(String isbm) {
 
