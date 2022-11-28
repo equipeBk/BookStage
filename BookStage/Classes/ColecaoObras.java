@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class ColecaoObras implements Colecao {
 
-	int n = 100, i, ind;
+		int n = 100, i, ind;
 
 	ArrayList<Obra> dados = new ArrayList<>(100);
 	private int posicaoCorrente;
@@ -58,15 +58,20 @@ public class ColecaoObras implements Colecao {
 
 			} else {
 
-				System.out
-						.println("O que voce pesquisou não foi encontrado em nossos dados, por favor tente novamente!");
-
+				System.out.println("O que voce pesquisou não foi encontrado em nossos dados, por favor tente novamente!");
 			}
 		}
 
 	}
 
 	public void PesquisarPreco(double precoInicial, double precoFinal) {
+		System.out.println();
+		for (i = 0; i < dados.size(); i++) {
+			if (dados.get(i).getValor() <= precoFinal && dados.get(i).getValor() >= precoInicial) {
+
+				System.out.println(dados.get(i));
+			}
+		}
 
 	}
 
@@ -82,19 +87,26 @@ public class ColecaoObras implements Colecao {
 	}
 
 	public void imprimeDadosPrincipais() {
+		for (i = 0; i < dados.size(); i++) {
+			System.out.println("Nome:"+dados.get(i).getNome());
+			System.out.println("Editora:"+dados.get(i).getEditora());
+			System.out.println("Preço:"+dados.get(i).getValor());
 
+			System.out.println();
+
+		}
 	}
 
 	public void imprimeTodosDados() {
-		
-		for(i=0; i< dados.size(); i++) {
-			
-		System.out.println(dados.get(i));
-		
-		System.out.println();
-			
+
+		for (i = 0; i < dados.size(); i++) {
+
+			System.out.println(dados.get(i));
+
+			System.out.println();
+
 		}
-		
+
 	}
 
 	public void imprimeLivroMaisVendido() {
