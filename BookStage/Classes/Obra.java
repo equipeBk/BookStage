@@ -19,9 +19,9 @@ public abstract class Obra {
 
 	public String toString() {
 
-		return "Obra \nnome=" + nome + "\neditora=" + editora + "\nISBM=" + ISBM + "\nidioma=" + idioma + "\nAutor="
-				+ Autor + "\nAnoPublicacao=" + AnoPublicacao.get(Calendar.YEAR) + "\nvalor=" + valor + "\nqtdCorrenteEstoque="
-				+ qtdCorrenteEstoque + "\nqtdEstoque=" + qtdEstoque;
+	return "Obra \nNome: " + nome + "\nEditora: " + editora + "\nISBM: " + ISBM + "\nIdioma: " + idioma + "\nAutor: "
+				+ Autor + "\nAno de publicacao: " + AnoPublicacao.get(Calendar.YEAR) + "\nValor: " + valor + "\nQuantidade Corrente em estoque: "
+				+ qtdCorrenteEstoque + "\nQuantidade em estoque: " + qtdEstoque;
 
 	}
 
