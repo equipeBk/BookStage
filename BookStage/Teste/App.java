@@ -53,11 +53,15 @@ public class App {
 					autor = scan.nextLine();
 					OEd.setAutor(autor);
 
+					System.out.println("Digite o idioma: ");
+					String idioma = scan.nextLine();
+					OEd.setIdioma(idioma);
+					
 					System.out.println("Digite a categoria do livro: ");
 					categoria = scan.nextLine();
 					OEd.setCategoria(categoria);
 
-					System.out.println("Agora a data de nascimento separada por espacos (ex: dd mm yyyy): ");
+					System.out.println("Agora a data de lançamento separada por espacos (ex: dd mm yyyy): ");
 					dd = scan.nextInt();
 					mm = scan.nextInt();
 					mm--;
@@ -76,8 +80,10 @@ public class App {
 
 					scan.nextLine();
 
-					System.out.println("Digite a referencia: ");
+					System.out.println("Digite a referencia bibliográfica: ");
 					referencia = scan.nextLine();
+					OEd.setReferencias(referencia);
+					
 					CO.inserirObra(OEd);
 
 					i++;
@@ -103,12 +109,16 @@ public class App {
 					System.out.println("Digite a autor: ");
 					autor = scan.nextLine();
 					OHq.setAutor(autor);
+					
+					System.out.println("Digite o idioma: ");
+					String idioma = scan.nextLine();
+					OHq.setIdioma(idioma);
 
 					System.out.println("Digite a categoria do livro: ");
 					categoria = scan.nextLine();
 					OHq.setCategoria(categoria);
 
-					System.out.println("Agora a data de nascimento separada por espacos (ex: dd mm yyyy): ");
+					System.out.println("Agora a data de lançamento separada por espacos (ex: dd mm yyyy): ");
 					dd = scan.nextInt();
 					mm = scan.nextInt();
 					mm--;
@@ -129,6 +139,7 @@ public class App {
 
 					System.out.println("Digite o ilustrador: ");
 					ilustrador = scan.nextLine();
+					OHq.setIlustrador(ilustrador);
 
 					CO.inserirObra(OHq);
 					i++;
@@ -186,12 +197,12 @@ public class App {
 				break;
 
 			// IMPRIMIR DADOS PRINCIPAIS
-
 			case 7:
+				CO.imprimeDadosPrincipais();
+				
 				break;
 
 			// IMPRIMIR TODOS OS DADOS
-
 			case 8:
 
 				CO.imprimeTodosDados();
@@ -199,7 +210,6 @@ public class App {
 				break;
 
 			// IMPRIMIR LIVRO MAIS VENDIDO
-
 			case 9:
 
 				CO.imprimeLivroMaisVendido();
