@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class ColecaoObras implements Colecao {
 
-		int n = 100, i, ind;
+	int n = 100, i, ind;
 
 	ArrayList<Obra> dados = new ArrayList<>(100);
 	private int posicaoCorrente;
@@ -58,7 +58,8 @@ public class ColecaoObras implements Colecao {
 
 			} else {
 
-				System.out.println("O que voce pesquisou não foi encontrado em nossos dados, por favor tente novamente!");
+				System.out
+						.println("O que voce pesquisou não foi encontrado em nossos dados, por favor tente novamente!");
 			}
 		}
 
@@ -88,9 +89,9 @@ public class ColecaoObras implements Colecao {
 
 	public void imprimeDadosPrincipais() {
 		for (i = 0; i < dados.size(); i++) {
-			System.out.println("Nome:"+dados.get(i).getNome());
-			System.out.println("Editora:"+dados.get(i).getEditora());
-			System.out.println("Preço:"+dados.get(i).getValor());
+			System.out.println("Nome:" + dados.get(i).getNome());
+			System.out.println("Editora:" + dados.get(i).getEditora());
+			System.out.println("Preço:" + dados.get(i).getValor());
 
 			System.out.println();
 
@@ -111,6 +112,17 @@ public class ColecaoObras implements Colecao {
 
 	public void imprimeLivroMaisVendido() {
 
-	}
+		int menor = 0;
 
+		for (i = 0; i < dados.size(); i++) {
+
+			if (dados.get(i).getQtdEstoque() > menor) {
+
+				menor = i;
+
+			}
+		}
+
+		System.out.println("O livro mais vendido foi: " + dados.get(menor).getNome());
+	}
 }
