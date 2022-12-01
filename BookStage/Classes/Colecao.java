@@ -1,6 +1,5 @@
 package Classes;
 
-
 public interface Colecao {
 	void PesquisarPorDados(String pesq);
 

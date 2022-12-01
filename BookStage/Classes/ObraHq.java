@@ -16,24 +16,10 @@ public class ObraHq extends Obra {
 
 	public String toString() {
 
-		return "Nome: " + this.getNome() + "\nEditora: " + this.getEditora() + "\nISBM:" + this.getISBM() + "\nIdioma:"
+		return "Nome: " + this.getNome() + "\nEditora: " + this.getEditora() + "\nISBN:" + this.getISBN() + "\nIdioma:"
 				+ this.getIdioma() + "\nAutor:" + this.getAutor() + "\nAno de publicacao: "
-				+ this.getAnoPublicacao().get(Calendar.YEAR) + "\nValor: " + this.getValor()
-				+ "\nQuantidade Corrente de Estoque: " + this.getQtdCorrenteEstoque() + "\nQuantidade Estoque: "
-				+ this.getQtdEstoque() + "\nIlustrador: " + this.ilustrador;
+				+ this.getAnoPublicacao().get(Calendar.YEAR) + "\nValor: " + this.getValor() + "\nEdicao: "
+				+ this.getEdicao() + "\nQuantidade Estoque: " + this.getQtdEstoque() + "\nIlustrador: "
+				+ this.ilustrador;
 	}
-
-	boolean ValidarISBM(String isbm) {
-
-		if (isbm.length() == 10) {
-
-			return true;
-
-		} else {
-
-			return false;
-
-		}
-	}
-
 }

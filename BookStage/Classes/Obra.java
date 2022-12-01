@@ -6,22 +6,22 @@ public abstract class Obra {
 
 	private String nome;
 	private String editora;
-	private String ISBM;
+	private String ISBN;
 	private String idioma;
 	private String categoria;
 	private String Autor;
+	private String edicao;
 	private Calendar AnoPublicacao;
 	private Double valor;
-	private int qtdCorrenteEstoque;
 	private int qtdEstoque;
 
 	// GETS E SETS
 
 	public String toString() {
 
-	return "Obra \nNome: " + nome + "\nEditora: " + editora + "\nISBM: " + ISBM + "\nIdioma: " + idioma + "\nAutor: "
-				+ Autor + "\nAno de publicacao: " + AnoPublicacao.get(Calendar.YEAR) + "\nValor: " + valor + "\nQuantidade Corrente em estoque: "
-				+ qtdCorrenteEstoque + "\nQuantidade em estoque: " + qtdEstoque;
+		return "Obra \nNome: " + nome + "\nEditora: " + editora + "\nISBN: " + ISBN + "\nIdioma: " + idioma
+				+ "\nAutor: " + Autor + "\nAno de publicacao: " + AnoPublicacao.get(Calendar.YEAR) + "\nValor: " + valor
+				+ "\nEdicao: " + edicao + "\nQuantidade em estoque: " + qtdEstoque;
 
 	}
 
@@ -41,12 +41,12 @@ public abstract class Obra {
 		this.editora = editora;
 	}
 
-	public String getISBM() {
-		return ISBM;
+	public String getISBN() {
+		return ISBN;
 	}
 
-	public void setISBM(String iSBM) {
-		ISBM = iSBM;
+	public void setISBN(String ISBN) {
+		this.ISBN = ISBN;
 	}
 
 	public String getIdioma() {
@@ -81,14 +81,6 @@ public abstract class Obra {
 		this.valor = valor;
 	}
 
-	public int getQtdCorrenteEstoque() {
-		return qtdCorrenteEstoque;
-	}
-
-	public void setQtdCorrenteEstoque(int qtdCorrenteEstoque) {
-		this.qtdCorrenteEstoque = qtdCorrenteEstoque;
-	}
-
 	public int getQtdEstoque() {
 		return qtdEstoque;
 	}
@@ -96,8 +88,6 @@ public abstract class Obra {
 	public void setQtdEstoque(int qtdEstoque) {
 		this.qtdEstoque = qtdEstoque;
 	}
-	
-	
 
 	public String getCategoria() {
 		return categoria;
@@ -107,10 +97,11 @@ public abstract class Obra {
 		this.categoria = categoria;
 	}
 
-	boolean ValidarISBM(String isbm) {
-
-		return true;
-
+	public String getEdicao() {
+		return edicao;
 	}
 
+	public void setEdicao(String edicao) {
+		this.edicao = edicao;
+	}
 }

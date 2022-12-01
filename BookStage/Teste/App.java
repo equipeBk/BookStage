@@ -1,13 +1,12 @@
 package Teste;
-
 import Classes.*;
 import java.util.*;
 
 public class App {
 
-		public static void main(String[] args) {
+	public static void main(String[] args) {
 
-		String nome, editora, isbm, autor, referencia, ilustrador, pesq, categoria;
+		String nome, editora, ISBN, autor, referencia, ilustrador, pesq, categoria, edicao;
 		Double valor;
 		int qtdE, opMenu = 0, dd, mm, yyyy, i = 0;
 
@@ -19,8 +18,8 @@ public class App {
 
 			do {
 				try {
-				CO.menu();
-				
+					CO.menu();
+
 					int opMen = scan.nextInt();
 
 					switch (opMen) {
@@ -45,9 +44,9 @@ public class App {
 							editora = scan.nextLine();
 							OEd.setEditora(editora);
 
-							System.out.println("Digite a ISBM: ");
-							isbm = scan.nextLine();
-							OEd.setISBM(isbm);
+							System.out.println("Digite a ISBN: ");
+							ISBN = scan.nextLine();
+							OEd.setISBN(ISBN);
 
 							System.out.println("Digite a autor: ");
 							autor = scan.nextLine();
@@ -60,6 +59,10 @@ public class App {
 							System.out.println("Digite a categoria do livro: ");
 							categoria = scan.nextLine();
 							OEd.setCategoria(categoria);
+
+							System.out.println("Digite a edicao do livro: ");
+							edicao = scan.nextLine();
+							OEd.getEdicao();
 
 							System.out.println("Agora a data de lançamento separada por espacos (ex: dd mm yyyy): ");
 							dd = scan.nextInt();
@@ -87,7 +90,6 @@ public class App {
 							CO.inserirObra(OEd);
 
 							i++;
-
 						}
 
 						else if (opMenu == 2) {
@@ -102,9 +104,9 @@ public class App {
 							editora = scan.nextLine();
 							OHq.setEditora(editora);
 
-							System.out.println("Digite a ISBM: ");
-							isbm = scan.nextLine();
-							OHq.setISBM(isbm);
+							System.out.println("Digite a ISBN: ");
+							ISBN = scan.nextLine();
+							OHq.setISBN(ISBN);
 
 							System.out.println("Digite a autor: ");
 							autor = scan.nextLine();
@@ -117,6 +119,10 @@ public class App {
 							System.out.println("Digite a categoria do livro: ");
 							categoria = scan.nextLine();
 							OHq.setCategoria(categoria);
+
+							System.out.println("Digite a edicao do livro: ");
+							edicao = scan.nextLine();
+							OHq.getEdicao();
 
 							System.out.println("Agora a data de lançamento separada por espacos (ex: dd mm yyyy): ");
 							dd = scan.nextInt();
@@ -143,7 +149,6 @@ public class App {
 
 							CO.inserirObra(OHq);
 							i++;
-
 						}
 						break;
 
@@ -215,13 +220,20 @@ public class App {
 						CO.imprimeLivroMaisVendido();
 
 						break;
+
+					case 10:
+
+						CO.ImprimeEstoque();
+
+						break;
+
 					}
 				} catch (java.util.InputMismatchException e) {
-					System.out.println("Houve um erro! Fique atento ao formato dos dados (numeros ou letras) que deseja inserir");
+					System.out.println(
+							"Houve um erro! Fique atento ao formato dos dados (numeros ou letras) que deseja inserir");
 					scan.nextLine();
 				}
-			} while (opMenu != 10);
+			} while (opMenu != 11);
 		}
-
 	}
 }

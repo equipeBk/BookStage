@@ -5,6 +5,7 @@ import java.util.ArrayList;
 public class ColecaoObras implements Colecao {
 
 	int n = 100, i, ind;
+	private int qtdCorrenteEstoque;
 
 	ArrayList<Obra> dados = new ArrayList<>(100);
 	private int posicaoCorrente;
@@ -27,6 +28,14 @@ public class ColecaoObras implements Colecao {
 		this.posicaoCorrente = posicaoCorrente;
 	}
 
+	public int getQtdCorrenteEstoque() {
+		return qtdCorrenteEstoque;
+	}
+
+	public void setQtdCorrenteEstoque(int qtdCorrenteEstoque) {
+		this.qtdCorrenteEstoque = qtdCorrenteEstoque;
+	}
+
 	// METODOS
 
 	// METODO MENU TEMPORARIO, ATÉ CRIARMOS A INTERFACE
@@ -43,7 +52,8 @@ public class ColecaoObras implements Colecao {
 		System.out.printf("------Imprimir dados principais = 7---------------------------\n");
 		System.out.printf("--------imprimir todos os dados = 8---------------------------\n");
 		System.out.printf("--imprimir o livro mais vendido = 9---------------------------\n");
-		System.out.printf("--------------------------Sair = 10---------------------------\n");
+		System.out.printf("-------imprimir estoque total: = 10---------------------------\n");
+		System.out.printf("--------------------------Sair = 11---------------------------\n");
 	}
 
 	public void PesquisarPorDados(String pesq) {
@@ -51,7 +61,7 @@ public class ColecaoObras implements Colecao {
 		for (i = 0; i < dados.size(); i++) {
 
 			if (pesq.equals(dados.get(i).getNome()) || pesq.equals(dados.get(i).getEditora())
-					|| pesq.equals(dados.get(i).getAutor()) || pesq.equals(dados.get(i).getISBM())) {
+					|| pesq.equals(dados.get(i).getAutor()) || pesq.equals(dados.get(i).getISBN())) {
 
 				ind = i;
 				System.out.println(dados.get(ind));
@@ -62,7 +72,6 @@ public class ColecaoObras implements Colecao {
 						.println("O que voce pesquisou não foi encontrado em nossos dados, por favor tente novamente!");
 			}
 		}
-
 	}
 
 	public void PesquisarPreco(double precoInicial, double precoFinal) {
@@ -73,11 +82,20 @@ public class ColecaoObras implements Colecao {
 				System.out.println(dados.get(i));
 			}
 		}
-
 	}
 
 	public void ImprimeEstoque() {
 
+		int somaEstoques = 0;
+
+		for (i = 0; i < dados.size(); i++) {
+
+			somaEstoques = +dados.get(i).getQtdEstoque();
+			this.qtdCorrenteEstoque = somaEstoques;
+		}
+
+		System.out.println("A quantidade total de estoques e: " + somaEstoques);
+		System.out.println("A Estoque corrente: " + this.qtdCorrenteEstoque);
 	}
 
 	public Boolean inserirObra(Obra o) {
@@ -94,7 +112,6 @@ public class ColecaoObras implements Colecao {
 			System.out.println("Preço:" + dados.get(i).getValor());
 
 			System.out.println();
-
 		}
 	}
 
@@ -107,7 +124,6 @@ public class ColecaoObras implements Colecao {
 			System.out.println();
 
 		}
-
 	}
 
 	public void imprimeLivroMaisVendido() {
