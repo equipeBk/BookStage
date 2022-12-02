@@ -56,7 +56,7 @@ public class ColecaoObras implements Colecao {
 		System.out.printf("--------------------------Sair = 11---------------------------\n");
 	}
 
-	public void PesquisarPorDados(String pesq) {
+	public Boolean PesquisarPorDados(String pesq) {
 
 		for (i = 0; i < dados.size(); i++) {
 
@@ -65,23 +65,23 @@ public class ColecaoObras implements Colecao {
 
 				ind = i;
 				System.out.println(dados.get(ind));
+				return true;
 
-			} else {
-
-				System.out
-						.println("O que voce pesquisou não foi encontrado em nossos dados, por favor tente novamente!");
 			}
 		}
+		return false;
 	}
 
-	public void PesquisarPreco(double precoInicial, double precoFinal) {
+	public Boolean PesquisarPreco(double precoInicial, double precoFinal) {
 		System.out.println();
 		for (i = 0; i < dados.size(); i++) {
 			if (dados.get(i).getValor() <= precoFinal && dados.get(i).getValor() >= precoInicial) {
 
 				System.out.println(dados.get(i));
+				return true;
 			}
 		}
+		return false;
 	}
 
 	public void ImprimeEstoque() {

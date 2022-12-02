@@ -1,9 +1,9 @@
 package Classes;
 
 public interface Colecao {
-	void PesquisarPorDados(String pesq);
+	Boolean PesquisarPorDados(String pesq);
 
-	void PesquisarPreco(double precoInicial, double precoFinal);
+	Boolean PesquisarPreco(double precoInicial, double precoFinal);
 
 	void ImprimeEstoque();
 

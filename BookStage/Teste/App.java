@@ -1,4 +1,5 @@
 package Teste;
+
 import Classes.*;
 import java.util.*;
 
@@ -62,7 +63,7 @@ public class App {
 
 							System.out.println("Digite a edicao do livro: ");
 							edicao = scan.nextLine();
-							OEd.getEdicao();
+							OEd.setEdicao(edicao);
 
 							System.out.println("Agora a data de lançamento separada por espacos (ex: dd mm yyyy): ");
 							dd = scan.nextInt();
@@ -83,7 +84,7 @@ public class App {
 
 							scan.nextLine();
 
-							System.out.println("Digite a referencia bibliográfica: ");
+							System.out.println("Digite palavras chaves da obra.");
 							referencia = scan.nextLine();
 							OEd.setReferencias(referencia);
 
@@ -122,7 +123,7 @@ public class App {
 
 							System.out.println("Digite a edicao do livro: ");
 							edicao = scan.nextLine();
-							OHq.getEdicao();
+							OHq.setEdicao(edicao);
 
 							System.out.println("Agora a data de lançamento separada por espacos (ex: dd mm yyyy): ");
 							dd = scan.nextInt();
@@ -158,7 +159,9 @@ public class App {
 						scan.nextLine();
 						System.out.print("digite o nome da obra que deseja pesquisar:");
 						pesq = scan.nextLine();
-						CO.PesquisarPorDados(pesq);
+						if (CO.PesquisarPorDados(pesq) == false) {
+							System.out.println("Não há obra com esse nome");
+						}
 						break;
 
 					// BUSCAR POR EDITORA
@@ -167,8 +170,9 @@ public class App {
 						scan.nextLine();
 						System.out.print("digite o nome da editora que deseja pesquisar:");
 						pesq = scan.nextLine();
-						CO.PesquisarPorDados(pesq);
-
+						if (CO.PesquisarPorDados(pesq) == false) {
+							System.out.println("Não há obra com esse nome de editora");
+						}
 						break;
 
 					// BUSCAR POR AUTOR
@@ -177,7 +181,9 @@ public class App {
 						scan.nextLine();
 						System.out.print("digite o nome do autor que deseja pesquisar:");
 						pesq = scan.nextLine();
-						CO.PesquisarPorDados(pesq);
+						if (CO.PesquisarPorDados(pesq) == false) {
+							System.out.println("Não há obra com esse autor");
+						}
 
 						break;
 
@@ -185,9 +191,11 @@ public class App {
 					case 5:
 
 						scan.nextLine();
-						System.out.print("digite a isbn que deseja pesquisar:");
+						System.out.print("digite a ISBN que deseja pesquisar:");
 						pesq = scan.nextLine();
-						CO.PesquisarPorDados(pesq);
+						if (CO.PesquisarPorDados(pesq) == false) {
+							System.out.println("Não há obra com esse ISBN");
+						}
 
 						break;
 
@@ -198,7 +206,9 @@ public class App {
 						double precoInicial = scan.nextDouble();
 						System.out.print("Digite o valor final do exemplar:");
 						double precoFinal = scan.nextDouble();
-						CO.PesquisarPreco(precoInicial, precoFinal);
+						if (CO.PesquisarPreco(precoInicial, precoFinal) == false) {
+							System.out.println("Não há obra nesta faixa de preço.");
+						}
 						break;
 
 					// IMPRIMIR DADOS PRINCIPAIS
@@ -216,8 +226,14 @@ public class App {
 
 					// IMPRIMIR LIVRO MAIS VENDIDO
 					case 9:
-
-						CO.imprimeLivroMaisVendido();
+						try {
+							CO.imprimeLivroMaisVendido();
+						}catch(java.lang.IndexOutOfBoundsException e) {
+							System.out.println(
+									"Não há nada no estoque.");
+							scan.nextLine();
+						}
+						
 
 						break;
 
