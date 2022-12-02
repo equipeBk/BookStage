@@ -90,7 +90,7 @@ public class ColecaoObras implements Colecao {
 
 		for (i = 0; i < dados.size(); i++) {
 
-			somaEstoques = +dados.get(i).getQtdEstoque();
+			somaEstoques += dados.get(i).getQtdEstoque();
 			this.qtdCorrenteEstoque = somaEstoques;
 		}
 
